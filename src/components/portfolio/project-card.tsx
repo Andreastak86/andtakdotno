@@ -4,6 +4,7 @@ type Project = {
     description: string;
     outcome: string;
     stack: string[];
+    link?: string;
 };
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -14,6 +15,16 @@ export function ProjectCard({ project }: { project: Project }) {
                     <h3 className='text-2xl font-semibold tracking-tight text-stone-900'>
                         {project.title}
                     </h3>
+                    {project.link && (
+                        <a
+                            href={project.link}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='mt-2 inline-block text-sm font-medium text-primary hover:underline'
+                        >
+                            Se prosjekt →
+                        </a>
+                    )}
 
                     <p className='mt-2 text-sm font-medium text-stone-500'>
                         {project.role}

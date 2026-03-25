@@ -6,7 +6,8 @@ export const projects = [
             "Digital plattform for idrettsarena med ansvar for web, innhold og teknisk drift.",
         outcome:
             "Løsninger satt i drift med synlighet på riksdekkende TV gjennom digitale reklameflater.",
-        stack: ["Next.js", "Sanity", "GCP"],
+        stack: ["Webflow", "Figma", "CapCut", "Canva", "Microsoft 365"],
+        link: "https://www.vareggarena.no",
     },
     {
         title: "Informasjonsplattform",
@@ -15,6 +16,7 @@ export const projects = [
             "Skreddersydd løsning for aktør i forsikringsbransjen med fokus på ytelse og struktur.",
         outcome: "Tilrettelagt for tydelig formidling og enkel videre drift.",
         stack: ["Next.js", "Sanity", "Tailwind"],
+        link: "https://www.jobloop.no/gjensidige",
     },
     {
         title: "Bookingløsning",
@@ -23,6 +25,7 @@ export const projects = [
             "Digital bookingflyt for utleie av lokaler og hytter, inkludert opplæring av brukere.",
         outcome:
             "Levert med overføring til drift slik at kunden kunne administrere løsningen selv.",
-        stack: ["Microsoft Bookings", "M365"],
+        stack: ["Microsoft 365"],
+        link: "https://www.varegg.no/utleie",
     },
 ];

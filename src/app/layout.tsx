@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Work_Sans } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/footer";
 
-// const geistSans = Geist({
-//     variable: "--font-geist-sans",
-//     subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//     variable: "--font-geist-mono",
-//     subsets: ["latin"],
-// });
+const manrope = Manrope({
+    variable: "--font-manrope",
+    subsets: ["latin"],
+});
+const workSans = Work_Sans({
+    variable: "--font-work-sans",
+    subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
     title: "Portfolio | Andreas Takvam | Software Engineer | Bergen, Norway",
@@ -25,7 +24,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='no'>
-            <body className='min-h-screen bg-stone-50 text-stone-900'>
+            <body
+                className={`${workSans.variable} ${manrope.variable} min-h-screen bg-stone-50 text-stone-900`}
+            >
                 <div className='flex min-h-screen flex-col'>
                     <main className='flex-1'>{children}</main>
                     <Footer />

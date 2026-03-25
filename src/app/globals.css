@@ -12,4 +12,28 @@
 
     --color-accent: #c08457;
     --color-accent-soft: #f5ebe4;
+
+    --font-sans: var(--font-work-sans);
+    --font-heading: var(--font-manrope);
+}
+
+:root {
+    --font-weight-heading: 600;
+}
+
+html {
+    font-family: var(--font-sans);
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-heading);
 }

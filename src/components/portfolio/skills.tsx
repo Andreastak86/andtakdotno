@@ -1,21 +1,4 @@
-const skillGroups = [
-    {
-        title: "Frontend",
-        items: ["Next.js", "TypeScript", "React", "Tailwind"],
-    },
-    {
-        title: "Backend",
-        items: ["Python", "FastAPI", "Pandas", "API-utvikling"],
-    },
-    {
-        title: "Sky & drift",
-        items: ["GCP", "Azure", "AWS", "Docker", "Linux"],
-    },
-    {
-        title: "CMS",
-        items: ["Sanity", "Webflow", "WordPress"],
-    },
-];
+import { skillGroups } from "@/lib/data/skills";
 
 export function Skills() {
     return (
