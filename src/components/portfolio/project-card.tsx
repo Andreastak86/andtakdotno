@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 type Project = {
     title: string;
     role: string;
@@ -9,12 +13,17 @@ type Project = {
 
 export function ProjectCard({ project }: { project: Project }) {
     return (
-        <article className='rounded-3xl border border-stone-200 bg-white p-8 shadow-sm'>
+        <motion.article
+            className='rounded-3xl border border-stone-200 bg-white p-8 shadow-sm transition-shadow duration-200 hover:shadow-md'
+            whileHover={{ y: -4 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+        >
             <div className='flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between'>
                 <div className='max-w-2xl'>
                     <h3 className='text-2xl font-semibold tracking-tight text-stone-900'>
                         {project.title}
                     </h3>
+
                     {project.link && (
                         <a
                             href={project.link}
@@ -39,7 +48,7 @@ export function ProjectCard({ project }: { project: Project }) {
                     </p>
                 </div>
 
-                <div className='min-w-50 rounded-2xl bg-stone-50 p-5'>
+                <div className='min-w-50 rounded-2xl bg-stone-50 p-5 transition-transform duration-200'>
                     <p className='text-sm font-medium text-stone-500'>Stack</p>
 
                     <div className='mt-4 flex flex-wrap gap-2'>
@@ -54,6 +63,6 @@ export function ProjectCard({ project }: { project: Project }) {
                     </div>
                 </div>
             </div>
-        </article>
+        </motion.article>
     );
 }

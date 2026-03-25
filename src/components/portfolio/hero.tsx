@@ -35,7 +35,7 @@ export function Hero() {
                     <div className='mt-8 flex flex-col gap-3 sm:flex-row'>
                         <Link
                             href='#prosjekter'
-                            className='inline-flex items-center justify-center rounded-2xl bg-stone-900 px-6 py-3 text-sm font-medium text-white transition hover:opacity-90'
+                            className='inline-flex items-center justify-center rounded-2xl bg-primary px-6 py-3 text-sm font-medium text-white transition hover:opacity-90'
                         >
                             Se prosjekter
                         </Link>
@@ -50,7 +50,7 @@ export function Hero() {
                 </motion.div>
 
                 <motion.div
-                    className='mx-auto w-full max-w-240px sm:max-w-280px md:max-w-320px lg:max-w-360px'
+                    className='mx-auto w-full max-w-xs sm:max-w-sm md:max-w-sm lg:max-w-md'
                     initial={{ opacity: 0, y: 32 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -60,16 +60,14 @@ export function Hero() {
                     }}
                 >
                     <div className='overflow-hidden rounded-4xl border border-stone-200 bg-white shadow-sm'>
-                        <div className='aspect-7/8'>
-                            <Image
-                                src='/funny-profile.jpg'
-                                alt='Portrett av Andreas Takvam'
-                                width={800}
-                                height={1000}
-                                priority
-                                className='h-full w-full object-cover object-[center_20%]'
-                            />
-                        </div>
+                        <Image
+                            src='/funny-profile.jpg'
+                            alt='Portrett av Andreas Takvam'
+                            width={800}
+                            height={1000}
+                            priority
+                            className='h-auto w-full object-cover object-top'
+                        />
                     </div>
 
                     <div className='mt-4 grid grid-cols-2 gap-3'>
