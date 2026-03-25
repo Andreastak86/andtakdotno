@@ -9,8 +9,9 @@ export function About() {
                         </p>
 
                         <h2 className='mt-3 max-w-xl text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl'>
-                            Teknologi, mennesker og løsninger som fungerer i
-                            virkeligheten.
+                            Teknologi,{" "}
+                            <span className='text-primary'>mennesker</span> og
+                            løsninger som fungerer i virkeligheten.
                         </h2>
                     </div>
 
