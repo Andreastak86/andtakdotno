@@ -11,7 +11,8 @@ export function Skills() {
                         </p>
 
                         <h2 className='mt-3 max-w-xl text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl'>
-                            Teknologi jeg bruker, og områder jeg jobber i.
+                            Teknologi jeg bruker, og områder jeg{" "}
+                            <span className='text-primary'>jobber</span> med.
                         </h2>
 
                         <p className='mt-5 max-w-lg text-base leading-8 text-stone-700 sm:text-lg'>
