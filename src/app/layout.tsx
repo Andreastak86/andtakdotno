@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Work_Sans } from "next/font/google";
 import "./globals.css";
+import { Footer } from "@/components/layout/footer";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const manrope = Manrope({
+    variable: "--font-manrope",
     subsets: ["latin"],
 });
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
+const workSans = Work_Sans({
+    variable: "--font-work-sans",
     subsets: ["latin"],
 });
 
@@ -23,11 +23,15 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html
-            lang='en'
-            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-        >
-            <body className='min-h-full flex flex-col'>{children}</body>
+        <html lang='no'>
+            <body
+                className={`${workSans.variable} ${manrope.variable} min-h-screen bg-stone-50 text-stone-900`}
+            >
+                <div className='flex min-h-screen flex-col'>
+                    <main className='flex-1'>{children}</main>
+                    <Footer />
+                </div>
+            </body>
         </html>
     );
 }
