@@ -14,10 +14,13 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://andreastakvam.no"),
+    metadataBase: new URL("https://andreastak.no"),
     title: {
         default: "Andreas Takvam | Utvikler i Bergen",
         template: "%s | Andreas Takvam",
+    },
+    icons: {
+        apple: "/apple-touch-icon.png",
     },
     description:
         "Portfolioen til Andreas Takvam – utvikler med erfaring fra utvikling, prosjektarbeid og digitale løsninger. Jeg bygger robuste, forståelige og nyttige løsninger med fokus på teknologi, struktur og mennesker.",
@@ -35,6 +38,7 @@ export const metadata: Metadata = {
         "Supabase",
         "portfolio utvikler",
     ],
+    manifest: "/manifest.json",
     authors: [{ name: "Andreas Takvam" }],
     creator: "Andreas Takvam",
     publisher: "Andreas Takvam",
@@ -54,7 +58,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "nb_NO",
-        url: "https://andreastakvam.no",
+        url: "https://andreastak.no",
         siteName: "Andreas Takvam",
         title: "Andreas Takvam | Utvikler i Bergen",
         description:
@@ -76,7 +80,7 @@ export const metadata: Metadata = {
         images: ["/og-image.png"],
     },
     alternates: {
-        canonical: "https://andreastakvam.no",
+        canonical: "https://andreastak.no",
     },
 };
 
