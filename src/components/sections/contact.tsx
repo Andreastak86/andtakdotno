@@ -1,5 +1,5 @@
 import { sendContactEmail } from "@/app/actions";
-import { SubmitButton } from "./submit-button";
+import { SubmitButton } from "@/components/portfolio/submit-button";
 import { TfiGithub } from "react-icons/tfi";
 import { MdMail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa6";
