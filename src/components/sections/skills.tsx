@@ -1,11 +1,41 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { skillGroups } from "@/lib/data/skills";
+import { Variants } from "framer-motion";
+
+const containerVariants = {
+    hidden: {},
+    show: {
+        transition: {
+            staggerChildren: 0.08,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.45,
+            ease: "easeOut",
+        },
+    },
+};
 
 export function Skills() {
     return (
         <section className='bg-white'>
             <div className='mx-auto max-w-6xl px-6 py-16 sm:px-8 md:py-20 lg:px-10'>
                 <div className='grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16'>
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                    >
                         <p className='text-sm font-medium uppercase tracking-[0.2em] text-stone-500'>
                             Kompetanse
                         </p>
@@ -20,13 +50,22 @@ export function Skills() {
                             det lettere å bygge stabile, forståelige og nyttige
                             løsninger over tid.
                         </p>
-                    </div>
+                    </motion.div>
 
-                    <div className='grid gap-5 sm:grid-cols-2'>
+                    <motion.div
+                        className='grid gap-5 sm:grid-cols-2'
+                        variants={containerVariants}
+                        initial='hidden'
+                        whileInView='show'
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
                         {skillGroups.map((group) => (
-                            <div
+                            <motion.div
                                 key={group.title}
-                                className='rounded-3xl border border-stone-200 bg-stone-50 p-6'
+                                variants={itemVariants}
+                                whileHover={{ y: -4 }}
+                                transition={{ duration: 0.2, ease: "easeOut" }}
+                                className='rounded-3xl border border-stone-200 bg-stone-50 p-6 shadow-sm transition-shadow duration-200 hover:shadow-md'
                             >
                                 <h3 className='text-lg font-semibold text-stone-900'>
                                     {group.title}
@@ -42,9 +81,9 @@ export function Skills() {
                                         </span>
                                     ))}
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
