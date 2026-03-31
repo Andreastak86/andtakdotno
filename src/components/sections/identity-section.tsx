@@ -19,6 +19,7 @@ export function IdentitySection() {
                         alt='Andreas i naturen'
                         width={900}
                         height={1200}
+                        priority
                         className='h-full w-full object-cover grayscale contrast-105'
                     />
                 </motion.div>

@@ -65,6 +65,7 @@ export function Hero() {
                             alt='Portrett av Andreas Takvam'
                             width={800}
                             height={1000}
+                            priority
                             className='h-auto w-full object-cover object-top'
                         />
                     </div>
