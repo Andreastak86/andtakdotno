@@ -15,7 +15,7 @@ export function IdentitySection() {
                     className='relative overflow-hidden rounded-3xl border border-border bg-surface shadow-sm'
                 >
                     <Image
-                        src='/andreas-nature.jpg'
+                        src='/andreas-nature.webp'
                         alt='Andreas i naturen'
                         width={900}
                         height={1200}
