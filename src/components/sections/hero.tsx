@@ -61,11 +61,10 @@ export function Hero() {
                 >
                     <div className='overflow-hidden rounded-4xl border border-stone-200 bg-white shadow-sm'>
                         <Image
-                            src='/funny-profile.jpg'
+                            src='/funny-profile.webp'
                             alt='Portrett av Andreas Takvam'
                             width={800}
                             height={1000}
-                            priority
                             className='h-auto w-full object-cover object-top'
                         />
                     </div>
