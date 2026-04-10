@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Manrope, Work_Sans } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/footer";
@@ -91,6 +92,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='no'>
+            <Analytics />
             <body
                 className={`${workSans.variable} ${manrope.variable} min-h-screen bg-stone-50 text-stone-900`}
             >
