@@ -7,6 +7,13 @@ export async function sendContactEmail(formData: FormData) {
     const email = String(formData.get("email") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
 
+    const company = String(formData.get("company") ?? "").trim();
+
+    if (company) {
+        console.warn("Bot detected via honeypot");
+        return;
+    }
+
     if (!name || !email || !message) {
         console.error("Missing fields");
         return;
