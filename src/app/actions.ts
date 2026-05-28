@@ -7,9 +7,9 @@ export async function sendContactEmail(formData: FormData) {
     const email = String(formData.get("email") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
 
-    const company = String(formData.get("company") ?? "").trim();
+    const website = String(formData.get("website") ?? "").trim();
 
-    if (company) {
+    if (website) {
         console.warn("Bot detected via honeypot");
         return;
     }
