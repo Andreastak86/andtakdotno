@@ -74,3 +74,12 @@ Designet er basert på:
 npm install
 npm run dev
 ```
+
+For kontaktskjemaet må lokal kjøring ha disse miljøvariablene i `.env.local`:
+
+```bash
+RESEND_API_KEY=...
+CONTACT_TO_EMAIL=...
+```
+
+Produksjonsbuild skal fortsatt kunne kjøre uten disse verdiene, men selve e-postsendingen vil logge en serverfeil hvis de mangler.

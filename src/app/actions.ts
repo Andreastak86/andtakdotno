@@ -1,6 +1,8 @@
 "use server";
 
-import { resend } from "@/lib/resend";
+import { getResendClient } from "@/lib/resend";
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function sendContactEmail(formData: FormData) {
     const name = String(formData.get("name") ?? "").trim();
@@ -14,15 +16,22 @@ export async function sendContactEmail(formData: FormData) {
         return;
     }
 
-    if (!name || !email || !message) {
-        console.error("Missing fields");
+    if (!name || !emailPattern.test(email) || !message) {
+        console.error("Invalid contact form submission");
+        return;
+    }
+
+    const to = process.env.CONTACT_TO_EMAIL;
+
+    if (!to) {
+        console.error("CONTACT_TO_EMAIL is not configured");
         return;
     }
 
     try {
-        await resend.emails.send({
+        await getResendClient().emails.send({
             from: "Portfolio <onboarding@resend.dev>",
-            to: process.env.CONTACT_TO_EMAIL!,
+            to,
             subject: `Ny melding fra ${name}`,
             replyTo: email,
             text: `Navn: ${name}\nE-post: ${email}\n\n${message}`,
