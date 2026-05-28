@@ -41,7 +41,7 @@ export function Contact() {
                                 <a
                                     href='https://github.com/Andreastak86'
                                     target='_blank'
-                                    rel='noreferrer'
+                                    rel='noopener noreferrer'
                                     className='leading-none hover:underline'
                                 >
                                     GitHub
@@ -53,7 +53,7 @@ export function Contact() {
                                 <a
                                     href='https://linkedin.com/in/andreas-takvam-623068a4'
                                     target='_blank'
-                                    rel='noreferrer'
+                                    rel='noopener noreferrer'
                                     className='leading-none hover:underline'
                                 >
                                     LinkedIn
