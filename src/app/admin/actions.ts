@@ -3,6 +3,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { getResendClient } from "@/lib/resend";
+import { getSupabaseClient } from "@/lib/supabase";
 
 const COOKIE_NAME = "admin_session";
 
@@ -68,6 +69,16 @@ export async function sendAdminEmail(
             subject,
             text: body,
         });
+
+        await getSupabaseClient().from("emails").insert({
+            type: "outbound",
+            from_name: "Andreas Takvam",
+            from_email: "hei@andreastak.no",
+            to_email: to,
+            subject,
+            message: body,
+        });
+
         return { success: true };
     } catch (err) {
         console.error("Admin email error:", err);
