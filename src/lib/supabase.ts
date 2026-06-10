@@ -13,6 +13,25 @@ export type EmailLog = {
     created_at: string;
 };
 
+export type JobStatus =
+    | "søkt"
+    | "til_intervju"
+    | "tilbud"
+    | "avslag"
+    | "trukket";
+
+export type JobApplication = {
+    id: string;
+    company: string;
+    position: string;
+    url: string | null;
+    applied_at: string;
+    status: JobStatus;
+    notes: string | null;
+    created_at: string;
+    updated_at: string;
+};
+
 export function getSupabaseClient() {
     const url = process.env.SUPABASE_URL;
     const key = process.env.SUPABASE_ANON_KEY;

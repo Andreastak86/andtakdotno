@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { LoginForm } from "./login-form";
 import { Dashboard } from "./dashboard";
 import { getEmailStats } from "./stats";
+import { getJobApplications } from "./job-actions";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,11 +20,15 @@ export default async function AdminPage() {
         return <LoginForm />;
     }
 
-    const stats = await getEmailStats();
+    const [stats, jobs] = await Promise.all([
+        getEmailStats(),
+        getJobApplications(),
+    ]);
 
     return (
         <Dashboard
             stats={stats}
+            jobs={jobs}
             defaultTo={process.env.CONTACT_TO_EMAIL ?? ""}
         />
     );
