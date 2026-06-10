@@ -2,7 +2,7 @@
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { resend } from "@/lib/resend";
+import { getResendClient } from "@/lib/resend";
 
 const COOKIE_NAME = "admin_session";
 
@@ -62,7 +62,7 @@ export async function sendAdminEmail(
     }
 
     try {
-        await resend.emails.send({
+        await getResendClient().emails.send({
             from: "Andreas Takvam <hei@andreastak.no>",
             to,
             subject,
