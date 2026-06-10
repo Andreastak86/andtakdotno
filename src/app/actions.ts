@@ -1,6 +1,7 @@
 "use server";
 
 import { getResendClient } from "@/lib/resend";
+import { getSupabaseClient } from "@/lib/supabase";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -35,6 +36,15 @@ export async function sendContactEmail(formData: FormData) {
             subject: `Ny melding fra ${name}`,
             replyTo: email,
             text: `Navn: ${name}\nE-post: ${email}\n\n${message}`,
+        });
+
+        await getSupabaseClient().from("emails").insert({
+            type: "inbound",
+            from_name: name,
+            from_email: email,
+            to_email: to,
+            subject: `Ny melding fra ${name}`,
+            message,
         });
     } catch (error) {
         console.error("Email error:", error);

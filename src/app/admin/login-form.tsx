@@ -7,12 +7,12 @@ export function LoginForm() {
     const [state, action, pending] = useActionState(loginAdmin, undefined);
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-stone-50">
-            <div className="w-full max-w-sm rounded-2xl border border-stone-200 bg-white p-8 shadow-sm">
-                <h1 className="mb-1 text-xl font-semibold text-stone-900">
+        <div className="flex min-h-screen items-center justify-center bg-background">
+            <div className="w-full max-w-sm rounded-2xl border border-border bg-surface p-8 shadow-sm">
+                <h1 className="mb-1 font-heading text-xl font-semibold text-text">
                     Admin
                 </h1>
-                <p className="mb-6 text-sm text-stone-500">
+                <p className="mb-6 text-sm text-muted">
                     Logg inn for å sende e-post
                 </p>
 
@@ -20,7 +20,7 @@ export function LoginForm() {
                     <div className="flex flex-col gap-1.5">
                         <label
                             htmlFor="password"
-                            className="text-sm font-medium text-stone-700"
+                            className="text-sm font-medium text-text"
                         >
                             Passord
                         </label>
@@ -31,7 +31,7 @@ export function LoginForm() {
                             required
                             autoFocus
                             placeholder="••••••••"
-                            className="rounded-lg border border-stone-300 bg-stone-50 px-3 py-2 text-sm text-stone-900 outline-none focus:border-stone-500 focus:ring-2 focus:ring-stone-200"
+                            className="rounded-lg border border-border bg-background px-3 py-2 text-sm text-text outline-none focus:border-primary focus:ring-2 focus:ring-primary-soft"
                         />
                     </div>
 
@@ -42,7 +42,7 @@ export function LoginForm() {
                     <button
                         type="submit"
                         disabled={pending}
-                        className="rounded-lg bg-stone-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-stone-700 disabled:opacity-60"
+                        className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
                     >
                         {pending ? "Logger inn…" : "Logg inn"}
                     </button>
