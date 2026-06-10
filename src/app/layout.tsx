@@ -92,7 +92,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='no'>
-            <Analytics />
             <body
                 className={`${workSans.variable} ${manrope.variable} min-h-screen bg-stone-50 text-stone-900`}
             >
@@ -100,6 +99,7 @@ export default function RootLayout({
                     <main className='flex-1'>{children}</main>
                     <Footer />
                 </div>
+                <Analytics />
             </body>
         </html>
     );
